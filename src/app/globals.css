@@ -2,8 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --primary-font: "montserrat";
+  --secondary-font: "Lato", sans-serif;
+
+  --primary-color: #2f4f4f;
+  --primary-hover:#446f6f;
+  --secondary-color: #a0b2a6;
+  --primary-background-color: #f5f5f5;
+
+  --text-title-desk-size: 4rem;
+  --text-content-desk-size: 2rem;
+  --text-title-mobile-size: 2rem;
+  --text-content-mobile-size: 1.25rem;
+  --text-content-weight: 400;
+
+  --box-shadow: 0 0.164375rem 0.289375rem 0 #00000005,
+    0 0.75rem 0.8125rem 0 #0000000a, 0 1.89875rem 2.18rem 0 #0000000d;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body{
+    background-color: var(--primary-background-color);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+}
+
+p {
+  font-family: var(--secondary-font);
+  color: var(--secondary-color);
+}
+
+.text-title-mobile {
+    font-size: var(--text-title-mobile-size);
+  }
+
+  .text-content-mobile{
+    font-size: var(--text-content-mobile-size);
+  }
+
+  .text-title-desk{
+    font-size: var(--text-title-desk-size);
+  }
+
+  .text-content-desk{
+    font-size: var(--text-content-desk-size);
+  }
+
+  .custom-shadow{
+    box-shadow: var(--box-shadow);
+  }

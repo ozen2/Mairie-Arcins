@@ -1,10 +1,28 @@
 import Image from "next/image";
 import logoArcins from "../../public/logoArcins.svg"
+import mairie from "../../public/image.png"
+
+import Card from "./card";
 
 export default function Home() {
   return (
-<main className="flex flex-col">
-  <header><Image src={logoArcins} alt="" width={100} className="ml-10 mt-10"/></header>
+<main className="flex flex-col ml-7 mr-7">
+  <header><Image src={logoArcins} alt="" width={100} className="mt-10 pb-12"/></header>
+  <article>
+    <section className="flex flex-col gap-8">
+    <Image 
+      src={mairie} 
+      className="object-cover min-h-96 border-solid rounded-tr-[6rem]"
+    />
+    <h1 className="text-title-mobile font-medium ">Lorem ipsum dolor sit amet</h1>
+    <p className="text-content-mobile font-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, atque. Sit velit repellendus ex, iste maiores quisquam.</p>
+    </section>   
+    <h1 className="text-title-mobile font-medium mt-20">Lorem ipsum</h1>
+    <section className="">
+      <Card/>
+      <Card/>
+    </section>
+  </article>
 </main>
   );
 }
