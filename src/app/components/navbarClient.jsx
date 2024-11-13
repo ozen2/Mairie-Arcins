@@ -11,16 +11,13 @@ export default function NavbarClient() {
   const [IsArrowClicked, SetIsArrowClicked] = useState(false);
   const [IsBurgerClicked, SetIsBurgerClicked] = useState(false);
   const [IsNavVisible, SetIsNavVisible] = useState(false);
-
-  const toggleArrow = () => {
-    SetIsArrowClicked(!IsArrowClicked);
-  };
+  const [IsServicesClicked, SetIsServicesClicked] = useState(false);
 
   const toggleNav = () => {
     SetIsNavVisible(true);
     if (IsNavVisible) {
       setTimeout(() => {
-        setIsNavVisible(false);
+        SetIsNavVisible(false);
       }, 500);
     }
     setTimeout(() => {
@@ -28,22 +25,37 @@ export default function NavbarClient() {
     }, 1);
   };
 
+  const toggleServices = () => {
+    SetIsServicesClicked(!IsServicesClicked);
+    SetIsArrowClicked(!IsArrowClicked);
+  };
+
   const isOpen = IsBurgerClicked
-    ? "bg-[--primary-color] absolute z-20 h-0 w-full top-0 left-0 -translate-y-[50rem] duration-700 ease-in-out flex flex-col gap-10 items-start"
-    : "bg-[--primary-color] absolute z-20 w-full h-full top-0 left-0 flex flex-col duration-500 ease-in-out gap-10 items-start";
+    ? "bg-[--primary-color] absolute z-20 w-full h-full top-0 left-0 flex flex-col duration-500 ease-in-out gap-10 items-start"
+    : "bg-[--primary-color] absolute z-20 h-0 w-full top-0 left-0 -translate-y-[50rem] duration-700 ease-in-out flex flex-col gap-10 items-start";
 
   const isVisible = IsNavVisible ? "block" : "hidden";
+
+  const servicesOpen = IsServicesClicked ? "block ml-10 text-white text-xl" : "hidden";
 
   return (
     <>
       <button onClick={toggleNav} className="burger-menu">
-        <span className={IsBurgerClicked ? "bg-white h-1 w-8 z-50 open1 rounded-full" : "line1"}></span>
+        <span
+          className={
+            IsBurgerClicked
+              ? "bg-white h-1 w-8 z-50 open1 rounded-full"
+              : "line1"
+          }
+        ></span>
         <span
           className={IsBurgerClicked ? "bg-white h-1 w-8 z-50 open2" : "line2"}
         ></span>
         <span
           className={
-            IsBurgerClicked ? "bg-white h-1 w-8 z-50 open3 rounded-full" : "line3"
+            IsBurgerClicked
+              ? "bg-white h-1 w-8 z-50 open3 rounded-full"
+              : "line3"
           }
         ></span>
       </button>
@@ -63,7 +75,7 @@ export default function NavbarClient() {
         <Link
           href={navigator}
           className="text-white ml-10 text-2xl flex w-screen justify-between"
-          onClick={toggleArrow}
+          onClick={toggleServices}
         >
           Services
           <Image
@@ -71,6 +83,10 @@ export default function NavbarClient() {
             className={IsArrowClicked ? "w-2 mr-20 rotate-90" : "w-2 mr-20"}
           />
         </Link>
+        <Link href={navigator} className={servicesOpen}>transports</Link>
+        <Link href={navigator} className={servicesOpen}>transports</Link>
+        <Link href={navigator} className={servicesOpen}>transports</Link>
+          <Link href={navigator}>Services</Link>
       </nav>
     </>
   );
