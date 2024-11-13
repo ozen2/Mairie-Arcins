@@ -65,17 +65,18 @@ p {
 
 .burger-menu {
   cursor: pointer;
-  width: 30px;
-  height: 20px;
+  width: 2rem;
+  height: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.line1,
+.burger-menu .line1,
 .line2,
 .line3 {
-  height: 4px;
+  height: 0.25rem;
+  width: 2rem;
   background-color: var(--primary-color);
   transition: all 0.3s ease;
   border-radius: 10rem;
@@ -93,14 +94,19 @@ p {
   transform: translateY(0);
 }
 
-.burger-menu.open .line1 {
-  transform: rotate(45deg) translateY(11px);
+.open1 {
+  transform: rotate(45deg) translateY(14px);
 }
 
-.burger-menu.open .line2 {
+.open2 {
   transform: scale(0);
 }
 
-.burger-menu.open .line3 {
-  transform: rotate(-45deg) translateY(-11px);
+.open3 {
+  transform: rotate(-45deg) translateY(-14px);
+}
+
+.span {
+  width: 35rem;
+  height: 0.1rem;
 }

@@ -2,29 +2,76 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import Arrow from "../../../public/arrow.svg";
+import LogoArcins from "../../../public/logoArcinsWhite.svg";
 
 export default function NavbarClient() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [IsArrowClicked, SetIsArrowClicked] = useState(false);
+  const [IsBurgerClicked, SetIsBurgerClicked] = useState(false);
+  const [IsNavVisible, SetIsNavVisible] = useState(false);
 
-  const handleMenu = () => {
-    setIsOpen(!isOpen);
+  const toggleArrow = () => {
+    SetIsArrowClicked(!IsArrowClicked);
   };
+
+  const toggleNav = () => {
+    SetIsNavVisible(true);
+    if (IsNavVisible) {
+      setTimeout(() => {
+        setIsNavVisible(false);
+      }, 500);
+    }
+    setTimeout(() => {
+      SetIsBurgerClicked(!IsBurgerClicked);
+    }, 1);
+  };
+
+  const isOpen = IsBurgerClicked
+    ? "bg-[--primary-color] absolute z-20 h-0 w-full top-0 left-0 -translate-y-[50rem] duration-700 ease-in-out flex flex-col gap-10 items-start"
+    : "bg-[--primary-color] absolute z-20 w-full h-full top-0 left-0 flex flex-col duration-500 ease-in-out gap-10 items-start";
+
+  const isVisible = IsNavVisible ? "block" : "hidden";
 
   return (
     <>
-      <div
-        className={`burger-menu  ${isOpen ? "open absolute z-30" : ""}`}
-        onClick={handleMenu}
-      >
-        <div className="line1"></div>
-        <div className="line2"></div>
-        <div className="line3"></div>
-      </div>
-      <section className={`${isOpen ? "flex flex-col bg-[var(--primary-color)] min-h-full w-full absolute z-20 translate-x-0 top-0 delay-75 duration-500" : "flex flex-col bg-[--primary-color] w-screen absolute top-20 -right-96"}`}>
-        <Link href={navigator}>Accueil</Link>
-        <Link href={navigator}>Actualités</Link>
-        <Link href={navigator}>Services</Link>
-      </section>
+      <button onClick={toggleNav} className="burger-menu">
+        <span className={IsBurgerClicked ? "bg-white h-1 w-8 z-50 open1 rounded-full" : "line1"}></span>
+        <span
+          className={IsBurgerClicked ? "bg-white h-1 w-8 z-50 open2" : "line2"}
+        ></span>
+        <span
+          className={
+            IsBurgerClicked ? "bg-white h-1 w-8 z-50 open3 rounded-full" : "line3"
+          }
+        ></span>
+      </button>
+      <nav className={`${isOpen} ${isVisible}`}>
+        <Image
+          src={LogoArcins}
+          alt=""
+          width={100}
+          className="mt-10 ml-10 z-50"
+        />
+        <Link href={navigator} className="mt-20 ml-10 text-white text-2xl">
+          Accueil
+        </Link>
+        <Link href={navigator} className="text-white ml-10 text-2xl">
+          Actualités
+        </Link>
+        <Link
+          href={navigator}
+          className="text-white ml-10 text-2xl flex w-screen justify-between"
+          onClick={toggleArrow}
+        >
+          Services
+          <Image
+            src={Arrow}
+            className={IsArrowClicked ? "w-2 mr-20 rotate-90" : "w-2 mr-20"}
+          />
+        </Link>
+      </nav>
     </>
   );
 }
