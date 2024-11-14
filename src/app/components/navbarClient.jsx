@@ -36,7 +36,9 @@ export default function NavbarClient() {
 
   const isVisible = IsNavVisible ? "block" : "hidden";
 
-  const servicesOpen = IsServicesClicked ? "block ml-10 text-white text-xl" : "hidden";
+  const servicesOpen = IsServicesClicked
+    ? "block ml-10 text-white text-xl"
+    : "hidden";
 
   return (
     <>
@@ -66,14 +68,14 @@ export default function NavbarClient() {
           width={100}
           className="mt-10 ml-10 z-50"
         />
-        <Link href={navigator} className="mt-20 ml-10 text-white text-2xl">
+        <Link href={""} className="mt-20 ml-10 text-white text-2xl">
           Accueil
         </Link>
-        <Link href={navigator} className="text-white ml-10 text-2xl">
+        <Link href={""} className="text-white ml-10 text-2xl">
           Actualités
         </Link>
         <Link
-          href={navigator}
+          href={""}
           className="text-white ml-10 text-2xl flex w-screen justify-between"
           onClick={toggleServices}
         >
@@ -83,10 +85,16 @@ export default function NavbarClient() {
             className={IsArrowClicked ? "w-2 mr-20 rotate-90" : "w-2 mr-20"}
           />
         </Link>
-        <Link href={navigator} className={servicesOpen}>transports</Link>
-        <Link href={navigator} className={servicesOpen}>transports</Link>
-        <Link href={navigator} className={servicesOpen}>transports</Link>
-          <Link href={navigator}>Services</Link>
+        <Link href={""} className={servicesOpen}>
+          transports
+        </Link>
+        <Link href={""} className={servicesOpen}>
+          transports
+        </Link>
+        <Link href={""} className={servicesOpen}>
+          transports
+        </Link>
+        <Link href={""}>Services</Link>
       </nav>
     </>
   );
