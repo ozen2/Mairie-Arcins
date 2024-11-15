@@ -20,10 +20,10 @@ export default function Home() {
           <section className="flex flex-col gap-8">
             <Image
               src={mairie}
-              className="object-cover min-h-96 border-solid rounded-tr-[6rem]"
+              className="object-cover min-h-96 border-solid rounded-md rounded-tr-[6rem]"
             />
             <h1 className="font-medium ">Lorem ipsum dolor sit amet</h1>
-            <p className="font-light text-justify">
+            <p className="font-light">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
               atque. Sit velit repellendus ex, iste maiores quisquam.
             </p>
@@ -38,11 +38,11 @@ export default function Home() {
             <p className="font-light">Lorem ipsum dolor</p>
             <div className="flex justify-between mt-10">
               <div>
-                <h3 className="font-medium">100+</h3>
+                <h2 className="font-medium">100+</h2>
                 <p className="font-light">Lorem ipsum</p>
               </div>
               <div>
-                <h3 className="font-medium">205+</h3>
+                <h2 className="font-medium">205+</h2>
                 <p className="font-light">Lorem ipsum</p>
               </div>
             </div>
@@ -54,11 +54,11 @@ export default function Home() {
             />
             <div className="flex justify-between mt-5">
               <div>
-                <h3 className="font-medium">55</h3>
+                <h2 className="font-medium">55</h2>
                 <p className="font-light">Lorem ipsum</p>
               </div>
               <div>
-                <h3 className="font-medium">266</h3>
+                <h2 className="font-medium">266</h2>
                 <p className="font-light">Lorem ipsum</p>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Home() {
             <Image
               src={mairie}
               alt=""
-              className="min-h-96 object-cover rounded-bl-[6rem] rounded-tr-[6rem] mb-5"
+              className="min-h-96 object-cover rounded-md rounded-tl-[6rem] mb-5"
             />
             <p className="font-light text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
