@@ -68,7 +68,8 @@ export default function NavbarClient() {
           width={100}
           className="mt-10 ml-10 z-50"
         />
-        <Link href={""} className="mt-20 ml-10 text-white text-2xl">
+        <span className="h-[0.05rem] w-80 self-center mt-10 bg-[--secondary-color]"></span>
+        <Link href={""} className="mt-10 ml-10 text-white text-2xl">
           Accueil
         </Link>
         <Link href={""} className="text-white ml-10 text-2xl">
@@ -81,6 +82,7 @@ export default function NavbarClient() {
         >
           Services
           <Image
+            alt=""
             src={Arrow}
             className={IsArrowClicked ? "w-2 mr-20 rotate-90" : "w-2 mr-20"}
           />
