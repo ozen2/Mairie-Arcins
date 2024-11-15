@@ -20,7 +20,8 @@ export default function Home() {
           <section className="flex flex-col gap-8">
             <Image
               src={mairie}
-              className="object-cover min-h-96 border-solid rounded-md rounded-tr-[6rem]"
+              className="object-cover border-solid rounded-md rounded-tr-[6rem]"
+              style={{ height: "clamp(24rem, 50vh, 60rem)" }}
             />
             <h1 className="font-medium ">Lorem ipsum dolor sit amet</h1>
             <p className="font-light">
@@ -69,7 +70,8 @@ export default function Home() {
             <Image
               src={mairie}
               alt=""
-              className="min-h-96 object-cover rounded-md rounded-tl-[6rem] mb-5"
+              className="object-cover rounded-md rounded-tl-[6rem] mb-5"
+              style={{ height: "clamp(24rem, 50vh, 60rem)" }}
             />
             <p className="font-light text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
