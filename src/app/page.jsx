@@ -7,15 +7,16 @@ import stat from "../../public/stat.svg";
 import Card from "./components/card";
 import Navbar from "./components/navbarClient";
 import Footer from "./components/footer";
+import LinkGen from "./components/Link";
 
 export default function Home() {
   return (
     <>
+      <header className="flex justify-between items-center ml-7 mr-7">
+        <Image src={logoArcins} alt="" width={100} className="mt-10 pb-12" />
+        <Navbar />
+      </header>
       <main className="flex flex-col ml-7 mr-7">
-        <header className="flex justify-between items-center">
-          <Image src={logoArcins} alt="" width={100} className="mt-10 pb-12" />
-          <Navbar />
-        </header>
         <article>
           <section className="flex flex-col gap-8">
             <Image
@@ -28,13 +29,15 @@ export default function Home() {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
               atque. Sit velit repellendus ex, iste maiores quisquam.
             </p>
+            <LinkGen name="En savoir plus" link="#" />
           </section>
           <h1 className="font-medium mt-20">Lorem ipsum</h1>
-          <section className="">
+          <section className="flex flex-col gap-8">
             <Card />
             <Card />
+            <LinkGen name="En savoir plus" link="#" />
           </section>
-          <section className="mt-20 flex-col mb-20">
+          <section className="mt-20 flex flex-col mb-20">
             <h1 className="font-medium">Lorem ipsum</h1>
             <p className="font-light">Lorem ipsum dolor</p>
             <div className="flex justify-between mt-10">
@@ -47,13 +50,8 @@ export default function Home() {
                 <p className="font-light">Lorem ipsum</p>
               </div>
             </div>
-            <Image
-              src={stat}
-              alt=""
-              width={200}
-              className="justify-self-center mt-5"
-            />
-            <div className="flex justify-between mt-5">
+            <Image src={stat} alt="" width={200} className="self-center mt-5" />
+            <div className="flex justify-between mt-5 mb-10">
               <div>
                 <h2 className="font-medium">55</h2>
                 <p className="font-light">Lorem ipsum</p>
@@ -63,6 +61,7 @@ export default function Home() {
                 <p className="font-light">Lorem ipsum</p>
               </div>
             </div>
+            <LinkGen name="En savoir plus" link="#" />
           </section>
           <section className="flex flex-col">
             <h1 className="font-medium">Lorem ipsum</h1>
@@ -70,15 +69,16 @@ export default function Home() {
             <Image
               src={mairie}
               alt=""
-              className="object-cover rounded-md rounded-tl-[6rem] mb-5"
+              className="object-cover rounded-md rounded-tl-[6rem] mb-10"
               style={{ height: "clamp(24rem, 50vh, 60rem)" }}
             />
-            <p className="font-light text-justify">
+            <p className="font-light text-justify mb-10">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
               aspernatur eum at suscipit facilis itaque, est, totam quos a
               provident nihil dicta vel obcaecati aliquam nulla sed? Quas,
               facilis expedita!
             </p>
+            <LinkGen name="En savoir plus" link="#" />
           </section>
         </article>
       </main>

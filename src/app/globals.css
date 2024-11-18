@@ -148,3 +148,17 @@ p {
   width: 35rem;
   height: 0.1rem;
 }
+
+.animated-underline:hover {
+  transform: scaleX(100);
+}
+
+@layer components {
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    @apply absolute content-[""] w-full h-0.5 left-0 bottom-[-4px] bg-[--primary-color] scale-x-0 hover:scale-x-100 transition-transform duration-300 origin-bottom-right hover:origin-bottom-left;
+  }
+}
