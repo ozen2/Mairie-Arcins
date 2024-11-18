@@ -8,7 +8,7 @@ export default function Card() {
     <article className="bg-white w-full rounded-3xl mt-20 flex flex-col gap-3 items-start custom-shadow">
       <Image
         src={mairie}
-        className="-mt-12 w-72 rounded-3xl self-center object-cover h-72 shadow-md"
+        className="-mt-12 w-72 rounded-3xl self-center min-w-5 max-w-50 object-cover shadow-md"
       ></Image>
       <h3 className="text-[1.3rem] ml-5 font-medium">Lorem ipsum</h3>
       <p className="ml-5 mr-5 line-clamp-2 font-light">
