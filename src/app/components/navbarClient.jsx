@@ -48,7 +48,7 @@ export default function NavbarClient() {
 
   const isOpen = IsBurgerClicked
     ? "bg-[--primary-color] absolute z-20 w-full h-full top-0 left-0 flex flex-col duration-500 ease-in-out gap-10 items-start"
-    : "bg-[--primary-color] absolute z-20 h-0 w-full top-0 left-0 -translate-y-[50rem] duration-700 ease-in-out flex flex-col gap-10 items-center";
+    : "bg-[--primary-color] absolute z-20 h-0 w-full top-0 left-0 -translate-y-[50rem] duration-700 ease-in-out flex flex-col gap-10 items-start";
 
   const isVisible = IsNavVisible ? "block" : "hidden";
 

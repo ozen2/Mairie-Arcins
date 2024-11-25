@@ -163,6 +163,50 @@ p {
   }
 }
 
-.transition-max-height {
-  transition: max-height 0.3s ease-in-out;
+.carousselAnim {
+  background-size: cover;
+  background-position: center;
+  animation: fade 16s infinite;
+}
+
+@keyframes fade {
+  0% {
+    background-image: url("../../public/image.png");
+  }
+  25% {
+    background-image: url("../../public/image copy 2.png");
+  }
+  50% {
+    background-image: url("../../public/image.png");
+  }
+  75% {
+    background-image: url("../../public/image copy 2.png");
+  }
+  100% {
+    background-image: url("../../public/image.png");
+  }
+}
+
+.carousselAnim2 {
+  background-size: cover;
+  background-position: center;
+  animation: fade2 16s infinite;
+}
+
+@keyframes fade2 {
+  0% {
+    background-image: url("../../public/image.png");
+  }
+  25% {
+    background-image: url("../../public/image copy 2.png");
+  }
+  50% {
+    background-image: url("../../public/image.png");
+  }
+  75% {
+    background-image: url("../../public/image copy 2.png");
+  }
+  100% {
+    background-image: url("../../public/image.png");
+  }
 }

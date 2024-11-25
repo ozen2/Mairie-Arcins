@@ -19,11 +19,7 @@ export default function Home() {
       <main className="flex flex-col ml-7 mr-7">
         <article>
           <section className="flex flex-col gap-8">
-            <Image
-              src={mairie}
-              className="object-cover border-solid rounded-md rounded-tr-[6rem]"
-              style={{ height: "clamp(24rem, 50vh, 60rem)" }}
-            />
+            <div className="carousselAnim h-[clamp(24rem,50vh,60rem)] rounded-tr-[5rem] rounded-md"></div>
             <h1 className="font-medium ">Lorem ipsum dolor sit amet</h1>
             <p className="font-light">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
@@ -66,12 +62,7 @@ export default function Home() {
           <section className="flex flex-col">
             <h1 className="font-medium">Lorem ipsum</h1>
             <p className="font-light mb-10">Lorem ipsum dolor</p>
-            <Image
-              src={mairie}
-              alt=""
-              className="object-cover rounded-md rounded-tl-[6rem] mb-10"
-              style={{ height: "clamp(24rem, 50vh, 60rem)" }}
-            />
+            <div className="h-[clamp(24rem,50vh,60rem)] rounded-tl-[5rem] mb-10 rounded-md carousselAnim2"></div>
             <p className="font-light text-justify mb-10">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
               aspernatur eum at suscipit facilis itaque, est, totam quos a
