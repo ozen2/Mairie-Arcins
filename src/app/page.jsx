@@ -28,11 +28,16 @@ export default function Home() {
             <LinkGen name="En savoir plus" link="#" />
           </section>
           <h1 className="font-medium mt-20">Lorem ipsum</h1>
-          <section className="flex flex-col gap-8">
+          <section className="flex flex-col items-center md:flex-row md:overflow-x-auto gap-8 scrollbar-none mb-10">
             <Card />
             <Card />
-            <LinkGen name="En savoir plus" link="#" />
+            <Card />
+            <Card />
+            <Card />
           </section>
+          <div className="flex justify-end">
+            <LinkGen name="En savoir plus" link="#" />
+          </div>
           <section className="mt-20 flex flex-col mb-20">
             <h1 className="font-medium">Lorem ipsum</h1>
             <p className="font-light">Lorem ipsum dolor</p>

@@ -5,11 +5,12 @@ import Button from "./button";
 
 export default function Card() {
   return (
-    <article className="bg-white w-full rounded-3xl mt-20 flex flex-col gap-3 items-start custom-shadow">
+    <article className="bg-white min-w-10 max-w-96 md:min-w-96 md:max-w-96 rounded-3xl mt-20 flex flex-col gap-3 items-start">
       <Image
         src={mairie}
-        className="-mt-12 w-72 rounded-3xl self-center min-w-5 max-w-50 object-cover shadow-md"
-      ></Image>
+        alt=""
+        className="-mt-12 rounded-3xl self-center w-[22rem] object-cover shadow-md"
+      />
       <h3 className="text-[1.3rem] ml-5 font-medium">Lorem ipsum</h3>
       <p className="ml-5 mr-5 line-clamp-2 font-light">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
