@@ -5,7 +5,7 @@ import Button from "./button";
 
 export default function Card() {
   return (
-    <article className="bg-white min-w-10 max-w-96 md:min-w-96 md:max-w-96 rounded-3xl mt-20 flex flex-col gap-3 items-start">
+    <article className="bg-[#ffffff] min-w-10 max-w-96 md:min-w-96 md:max-w-96 rounded-3xl mt-20 flex flex-col gap-3 items-start">
       <Image
         src={mairie}
         alt=""
