@@ -64,8 +64,8 @@ export default function NavbarClient() {
   const servicesOpen = IsServicesClicked ? "text-white" : "";
 
   const isSubVisible = IsSubMenuClicked
-    ? "flex opacity-100 duration-300 rounded-xl flex-col gap-2 justify-around absolute top-10 lg:flex-row lg:bg-[--secondary-color] lg:rounded-full lg:mt-3 lg:px-4 lg:py-2 lg:left-1/2 lg:-translate-x-1/2"
-    : "flex opacity-0 duration-300 rounded-xl flex-col gap-2 justify-around absolute top-10 lg:flex-row lg:bg-[--secondary-color] lg:left-1/2 lg:-translate-x-1/2";
+    ? "flex opacity-100 duration-300 rounded-xl flex-col gap-6 lg:gap-2 justify-around absolute top-10 lg:flex-row lg:bg-[--secondary-color] lg:rounded-full lg:mt-3 lg:px-4 lg:py-2 lg:left-1/2 lg:-translate-x-1/2"
+    : "flex opacity-0 duration-300 rounded-xl flex-col gap-6 lg:gap-2 justify-around absolute top-10 lg:flex-row lg:bg-[--secondary-color] lg:left-1/2 lg:-translate-x-1/2";
 
   const isSubClicked = IsSubMenuVisible ? "block" : "hidden";
 
