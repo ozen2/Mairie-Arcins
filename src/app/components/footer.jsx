@@ -22,7 +22,7 @@ export default function Footer() {
           <li className="text-white font-light self-center">lorem</li>
         </ul>
       </div>
-      <span className="w-80 ml-20 mr-20 h-[0.05rem] bg-[--secondary-color] -mb-5"></span>
+      <span className="w-[80%] ml-20 mr-20 h-[0.05rem] bg-[--secondary-color] -mb-5"></span>
       <ul className="flex self-start w-full justify-around mb-5">
         <li className="text-white font-light">lorem</li>
         <div className="flex gap-5">

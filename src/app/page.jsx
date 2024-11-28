@@ -12,7 +12,12 @@ export default function Home() {
   return (
     <>
       <header className="flex justify-between items-center ml-7 mr-7">
-        <Image src={logoArcins} alt="" width={100} className="mt-10 pb-12" />
+        <Image
+          src={logoArcins}
+          alt=""
+          width={100}
+          className="mt-10 pb-12 lg:opacity-0"
+        />
         <Navbar />
       </header>
       <main className="flex flex-col ml-7 mr-7">
