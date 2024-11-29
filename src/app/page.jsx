@@ -11,12 +11,11 @@ import LinkGen from "./components/Link";
 export default function Home() {
   return (
     <>
-      <header className="flex justify-between items-center ml-7 mr-7">
+      <header className="flex justify-between lg:justify-center items-center ml-7 mr-7">
         <Image
           src={logoArcins}
           alt=""
-          width={100}
-          className="mt-10 pb-12 lg:opacity-0"
+          className={`w-24 lg:w-40 mt-10 pb-12 lg:pb-36 lg:mt-5`}
         />
         <Navbar />
       </header>

@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import useScrollPosition from "../services/useScrollPosition";
+
 import Arrow from "../../../public/arrow.svg";
 import LogoArcins from "../../../public/logoArcinsWhite.svg";
 
@@ -15,6 +17,10 @@ export default function NavbarClient() {
   const [IsSubMenuClicked, SetIsSubMenuClicked] = useState(false);
   const [IsSubMenuVisible, SetIsSubMenuVisible] = useState(false);
   const [activeLink, SetActiveLink] = useState("link1");
+
+  const scrollPosition = useScrollPosition();
+
+  const navPosition = scrollPosition > 40 ? "top-5" : "top-28";
 
   const toggleNav = () => {
     if (!IsBurgerClicked) {
@@ -91,16 +97,16 @@ export default function NavbarClient() {
         ></span>
       </button>
       <nav
-        className={`${isOpen} ${isVisible} lg:fixed lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-0 lg:min-w-[62rem] lg:max-w-[70rem] lg:h-16 lg:bg-[--secondary-color] lg:flex lg:flex-row lg:items-center lg:justify-around lg:rounded-full`}
+        className={`${isOpen} ${isVisible} lg:fixed lg:${navPosition} lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-0 lg:max-w-[62rem] lg:h-16 lg:bg-[--secondary-color] lg:flex lg:justify-center lg:items-center lg:rounded-full`}
       >
         <Image
           src={LogoArcins}
           alt=""
           width={100}
-          className="mt-10 ml-10 z-50 self-start lg:mt-0 lg:ml-0 lg:self-center"
+          className="mt-10 ml-10 z-50 self-start lg:hidden"
         />
         <span className="h-[0.05rem] w-[90vw] self-center mt-10 bg-[--secondary-color] lg:hidden"></span>
-        <ul className="flex flex-col flex-wrap gap-10 md:flex-row md:flex-wrap lg:gap-4">
+        <ul className="flex flex-col flex-wrap gap-10 md:flex-row md:flex-wrap lg:gap-0 lg:justify-between lg:px-2 lg:w-full">
           <li>
             <Link
               href={""}
