@@ -20,7 +20,7 @@ export default function NavbarClient() {
 
   const scrollPosition = useScrollPosition();
 
-  const navPosition = scrollPosition > 40 ? "top-5" : "top-28";
+  const navPosition = scrollPosition > 50 ? "top-5" : "top-28";
 
   const toggleNav = () => {
     if (!IsBurgerClicked) {
@@ -97,7 +97,9 @@ export default function NavbarClient() {
         ></span>
       </button>
       <nav
-        className={`${isOpen} ${isVisible} lg:fixed lg:${navPosition} lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-0 lg:max-w-[62rem] lg:h-16 lg:bg-[--secondary-color] lg:flex lg:justify-center lg:items-center lg:rounded-full`}
+        className={`${isOpen} ${isVisible} lg:fixed ${
+          navPosition === "top-5" ? "lg:top-5" : "lg:top-28"
+        } lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-0 lg:max-w-[62rem] lg:h-16 lg:bg-[--secondary-color] lg:flex lg:justify-center lg:items-center lg:rounded-full`}
       >
         <Image
           src={LogoArcins}
