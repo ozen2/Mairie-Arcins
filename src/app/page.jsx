@@ -24,19 +24,36 @@ export default function Home() {
         <article>
           <section className="flex flex-col gap-8 lg:flex-row lg:gap-20">
             <div className="carousselAnim h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] rounded-tr-[5rem] rounded-md lg:shrink-0"></div>
-            <div className="lg:flex lg:flex-col lg:justify-between">
-              <div className="lg:flex lg:flex-col lg:gap-16">
-                <h1 className="font-medium">Lorem ipsum dolor sit amet</h1>
-                <p className="font-light">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Omnis, atque. Sit velit repellendus ex, iste maiores quisquam
-                  sdfjzefosefsfhs fzehfezuhfs fhsef ehzuof esfhz fhuezh
-                  fsequhfsf sdfjzefosefsfhs fzehfezuhfs fhsef ehzuof esfhz
-                  fhuezh fsequhfsf sdfjzefosefsfhs fzehfezuhfs fhsef ehzuof
-                  esfhz fhuezh fsequhfsf .
+            <div className="flex flex-col lg:justify-between gap-10 lg:max-h-[40rem]">
+              <div className="flex flex-col gap-4">
+                <h1 className="font-medium">Bienvenue à Arcins</h1>
+                <p className="font-normal">
+                  Arcins est un charmant village situé dans le Médoc, une région
+                  renommée pour ses paysages viticoles et son patrimoine
+                  naturel.
+                </p>
+                <p className="lineClamp3 font-normal">
+                  Nichée entre les prestigieux vignobles de Margaux et
+                  Saint-Julien, la commune offre une atmosphère paisible et
+                  authentique, idéale pour les amoureux de la nature et de la
+                  tranquillité.
+                </p>
+                <p className="lineClamp display-none2 font-normal">
+                  Avec une population d’environ 350 habitants, Arcins cultive un
+                  esprit convivial et chaleureux, où chaque habitant contribue à
+                  la vie locale. La commune est également bordée par l’estuaire
+                  de la Gironde, offrant des points de vue uniques et des
+                  activités nautiques pour les amateurs de plein air.
+                </p>
+                <p className="display-none lineClamp2 font-normal">
+                  Fière de son patrimoine, Arcins abrite des édifices
+                  historiques tels que l’église Saint-Martin et se distingue par
+                  son implication dans la préservation de l’environnement. C'est
+                  une destination parfaite pour découvrir l’art de vivre
+                  médocain et la richesse culturelle de la région.
                 </p>
               </div>
-              <div className="lg:flex lg:justify-start">
+              <div className="lg:flex lg:justify-start justify-end flex">
                 <LinkGen name="En savoir plus" link="#" />
               </div>
             </div>

@@ -74,7 +74,7 @@ h6 {
 }
 
 p {
-  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  font-size: clamp(1.2rem, 2.8vw, 1.25rem);
   line-height: clamp(1.5, 1.6, 1.8);
   color: var(--secondary-color);
   font-family: var(--secondary-font);
@@ -219,5 +219,65 @@ a {
   }
   100% {
     background-image: url("../../public/image.png");
+  }
+}
+
+@media (min-width: 1024px) {
+  .lineClamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+  }
+  .display-none {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) {
+  .lineClamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+  }
+  .display-none {
+    display: none;
+  }
+}
+
+@media (min-width: 1150px) {
+  .lineClamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: none;
+  }
+  .display-none {
+    display: block;
+  }
+  .lineClamp2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+  }
+}
+
+@media (min-width: 1350px) {
+  .lineClamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: none;
+  }
+  .display-none {
+    display: block;
+  }
+  .lineClamp2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: none;
   }
 }
