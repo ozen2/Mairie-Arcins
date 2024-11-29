@@ -22,14 +22,24 @@ export default function Home() {
       </header>
       <main className="flex flex-col ml-7 mr-7">
         <article>
-          <section className="flex flex-col gap-8">
-            <div className="carousselAnim h-[clamp(24rem,50vh,60rem)] rounded-tr-[5rem] rounded-md"></div>
-            <h1 className="font-medium ">Lorem ipsum dolor sit amet</h1>
-            <p className="font-light">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
-              atque. Sit velit repellendus ex, iste maiores quisquam.
-            </p>
-            <LinkGen name="En savoir plus" link="#" />
+          <section className="flex flex-col gap-8 lg:flex-row lg:gap-20">
+            <div className="carousselAnim h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] rounded-tr-[5rem] rounded-md lg:shrink-0"></div>
+            <div className="lg:flex lg:flex-col lg:justify-between">
+              <div className="lg:flex lg:flex-col lg:gap-16">
+                <h1 className="font-medium">Lorem ipsum dolor sit amet</h1>
+                <p className="font-light">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Omnis, atque. Sit velit repellendus ex, iste maiores quisquam
+                  sdfjzefosefsfhs fzehfezuhfs fhsef ehzuof esfhz fhuezh
+                  fsequhfsf sdfjzefosefsfhs fzehfezuhfs fhsef ehzuof esfhz
+                  fhuezh fsequhfsf sdfjzefosefsfhs fzehfezuhfs fhsef ehzuof
+                  esfhz fhuezh fsequhfsf .
+                </p>
+              </div>
+              <div className="lg:flex lg:justify-start">
+                <LinkGen name="En savoir plus" link="#" />
+              </div>
+            </div>
           </section>
           <h1 className="font-medium mt-20">Lorem ipsum</h1>
           <section className="flex flex-col items-center md:flex-row md:overflow-x-auto gap-8 scrollbar-none mb-10 -mx-7 px-7">

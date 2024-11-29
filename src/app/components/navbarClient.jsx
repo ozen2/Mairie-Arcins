@@ -91,7 +91,7 @@ export default function NavbarClient() {
         ></span>
       </button>
       <nav
-        className={`${isOpen} ${isVisible} lg:fixed lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-0 lg:w-11/12 lg:h-16 lg:bg-[--secondary-color] lg:flex lg:flex-row lg:items-center lg:justify-around lg:rounded-full`}
+        className={`${isOpen} ${isVisible} lg:fixed lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-0 lg:min-w-[62rem] lg:max-w-[70rem] lg:h-16 lg:bg-[--secondary-color] lg:flex lg:flex-row lg:items-center lg:justify-around lg:rounded-full`}
       >
         <Image
           src={LogoArcins}
@@ -133,8 +133,8 @@ export default function NavbarClient() {
                 href={""}
                 className={
                   IsSubMenuClicked
-                    ? "text-white text-2xl ml-10 flex gap-4 relative pb-32 lg:pb-0 transition-all ease-in-out duration-300 lg:text-xl lg:ml-0"
-                    : "text-white text-2xl ml-10 flex gap-4 relative pb-0 lg:text-xl lg:ml-0"
+                    ? "text-white text-2xl ml-10 flex gap-4 relative pb-32 lg:pb-0 transition-all ease-in-out duration-300 lg:text-xl lg:ml-0 lg:px-4"
+                    : "text-white text-2xl ml-10 flex gap-4 relative pb-0 lg:text-xl lg:ml-0 lg:px-4"
                 }
                 onClick={toggleServices}
               >
