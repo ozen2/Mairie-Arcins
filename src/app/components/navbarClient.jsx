@@ -5,30 +5,24 @@ import Link from "next/link";
 import Image from "next/image";
 
 import useScrollPosition from "../services/useScrollPosition";
+import NavItem from "./NavItem";
+import NavSubItem from "./NavItem";
 
 import Arrow from "../../../public/arrow.svg";
 import LogoArcins from "../../../public/logoArcinsWhite.svg";
 
 export default function NavbarClient() {
-  const [IsArrowClicked, SetIsArrowClicked] = useState(false);
   const [IsBurgerClicked, SetIsBurgerClicked] = useState(false);
   const [IsNavVisible, SetIsNavVisible] = useState(false);
   const [IsServicesClicked, SetIsServicesClicked] = useState(false);
-  const [IsSubMenuClicked, SetIsSubMenuClicked] = useState(false);
-  const [IsSubMenuVisible, SetIsSubMenuVisible] = useState(false);
   const [activeLink, SetActiveLink] = useState("link1");
+  const [activeMenu, setActiveMenu] = useState(null);
 
   const scrollPosition = useScrollPosition();
 
   const navPosition = scrollPosition > 50 ? "top-5" : "top-28";
 
   const toggleNav = () => {
-    if (!IsBurgerClicked) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-
     SetIsNavVisible(true);
     if (IsNavVisible) {
       setTimeout(() => {
@@ -42,38 +36,26 @@ export default function NavbarClient() {
     }, 1);
   };
 
-  const toggleServices = () => {
-    SetIsServicesClicked(true);
-    if (SetIsServicesClicked) {
-      setTimeout(() => {
-        SetIsServicesClicked(!IsServicesClicked);
-      }, 220);
+  const toggleMenu = (menu) => {
+    if (activeMenu === menu) {
+      setActiveMenu(null);
+    } else {
+      setActiveMenu(menu);
     }
-    SetIsArrowClicked(!IsArrowClicked);
-    SetIsSubMenuVisible(true);
-    if (IsSubMenuVisible) {
-      setTimeout(() => {
-        SetIsSubMenuVisible(false);
-      }, 170);
-    }
-    setTimeout(() => {
-      SetIsSubMenuClicked(!IsSubMenuClicked);
-    }, 1);
   };
 
   const isOpen = IsBurgerClicked
-    ? "bg-[--primary-color] absolute z-20 w-full h-full top-0 left-0 duration-500 ease-in-out items-start flex flex-col gap-10 lg:gap-2"
+    ? "bg-[--primary-color] absolute z-20 w-full h-[100rem] top-0 left-0 duration-500 ease-in-out items-start flex flex-col gap-10 lg:gap-2"
     : "bg-[--primary-color] absolute z-20 h-0 w-full top-0 left-0 -translate-y-[50rem] duration-700 ease-in-out items-start flex flex-col gap-10 lg:gap-2";
 
   const isVisible = IsNavVisible ? "block" : "hidden";
 
-  const servicesOpen = IsServicesClicked ? "text-white" : "";
+  const isSubVisible = (menu) =>
+    activeMenu === menu
+      ? "flex flex-col mt-5 opacity-100 mx-12 lg:mx-0 duration-300 rounded-xl gap-5 lg:gap-2 top-10 lg:flex-row lg:bg-[--secondary-color] lg:rounded-full lg:mt-3 lg:px-4 lg:py-2 lg:absolute lg:flex-wrap lg:w-full"
+      : "flex opacity-0 duration-300 rounded-xl flex-col gap-5 lg:gap-2 top-10 lg:flex-row lg:bg-[--secondary-color] lg:absolute lg:w-full";
 
-  const isSubVisible = IsSubMenuClicked
-    ? "flex opacity-100 duration-300 rounded-xl flex-col gap-6 lg:gap-2 justify-around absolute top-10 lg:flex-row lg:bg-[--secondary-color] lg:rounded-full lg:mt-3 lg:px-4 lg:py-2 lg:left-1/2 lg:-translate-x-1/2"
-    : "flex opacity-0 duration-300 rounded-xl flex-col gap-6 lg:gap-2 justify-around absolute top-10 lg:flex-row lg:bg-[--secondary-color] lg:left-1/2 lg:-translate-x-1/2";
-
-  const isSubClicked = IsSubMenuVisible ? "block" : "hidden";
+  const isSubClicked = (menu) => (activeMenu === menu ? "block" : "hidden");
 
   return (
     <>
@@ -122,111 +104,92 @@ export default function NavbarClient() {
               Accueil
             </Link>
           </li>
+          <NavItem
+            IsSubMenuClicked={activeMenu === "presentation"}
+            IsArrowClicked={activeMenu === "presentation"}
+            Arrow={Arrow}
+            activeLink={activeLink}
+            SetActiveLink={SetActiveLink}
+            name="Présentation"
+            toggleMenu={() => toggleMenu("presentation")}
+            divClassName={`${isSubClicked("presentation")} ${isSubVisible(
+              "presentation"
+            )}`}
+            subMenus={[
+              {
+                name: ". Histoire et patrimoine",
+                href: "/presentation/histoire",
+              },
+              { name: ". Plan google", href: "/presentation/equipe" },
+              { name: ". Derniers recensement", href: "/presentation/vision" },
+              { name: ". Équipements", href: "/presentation/vision" },
+              { name: ". Actualité", href: "/presentation/vision" },
+              { name: ". Évènements", href: "/presentation/vision" },
+              { name: ". Arcins en images", href: "/presentation/vision" },
+              {
+                name: ". Plan communal de sauvegarde",
+                href: "/presentation/vision",
+              },
+            ]}
+          />
+          <NavItem
+            IsSubMenuClicked={activeMenu === "mairie"}
+            IsArrowClicked={activeMenu === "mairie"}
+            Arrow={Arrow}
+            activeLink={activeLink}
+            SetActiveLink={SetActiveLink}
+            name="Mairie"
+            toggleMenu={() => toggleMenu("mairie")}
+            divClassName={`${isSubClicked("mairie")} ${isSubVisible("mairie")}`}
+            subMenus={[
+              { name: "Histoire", href: "/mairie/histoire" },
+              { name: "Équipe", href: "/mairie/equipe" },
+              { name: "Vision", href: "/mairie/vision" },
+            ]}
+          />
+          <NavItem
+            IsSubMenuClicked={activeMenu === "vivre"}
+            IsArrowClicked={activeMenu === "vivre"}
+            Arrow={Arrow}
+            activeLink={activeLink}
+            SetActiveLink={SetActiveLink}
+            name="Vivre"
+            toggleMenu={() => toggleMenu("vivre")}
+            divClassName={`${isSubClicked("vivre")} ${isSubVisible("vivre")}`}
+            subMenus={[
+              { name: "Histoire", href: "/vivre/histoire" },
+              { name: "Équipe", href: "/vivre/equipe" },
+              { name: "Vision", href: "/vivre/vision" },
+            ]}
+          />
+          <NavItem
+            IsSubMenuClicked={activeMenu === "famille"}
+            IsArrowClicked={activeMenu === "famille"}
+            Arrow={Arrow}
+            activeLink={activeLink}
+            SetActiveLink={SetActiveLink}
+            name="Famille"
+            toggleMenu={() => toggleMenu("famille")}
+            divClassName={`${isSubClicked("famille")} ${isSubVisible(
+              "famille"
+            )}`}
+            subMenus={[
+              { name: "Histoire", href: "/famille/histoire" },
+              { name: "Équipe", href: "/famille/equipe" },
+              { name: "Vision", href: "/famille/vision" },
+            ]}
+          />
           <li>
             <Link
               href={""}
-              onClick={() => SetActiveLink("link2")}
-              className={
-                activeLink === "link2"
-                  ? "text-white ml-10 text-2xl lg:text-xl lg:ml-0 lg:px-4 lg:py-3 lg:bg-[--primary-color] lg:rounded-full"
-                  : "text-white ml-10 text-2xl lg:text-xl lg:ml-0 lg:px-4 lg:py-3"
-              }
-            >
-              Actualités
-            </Link>
-          </li>
-          <li>
-            <div>
-              <Link
-                href={""}
-                className={
-                  IsSubMenuClicked
-                    ? "text-white text-2xl ml-10 flex gap-4 relative pb-32 lg:pb-0 transition-all ease-in-out duration-300 lg:text-xl lg:ml-0 lg:px-4"
-                    : "text-white text-2xl ml-10 flex gap-4 relative pb-0 lg:text-xl lg:ml-0 lg:px-4"
-                }
-                onClick={toggleServices}
-              >
-                Services
-                <Image
-                  alt=""
-                  src={Arrow}
-                  className={IsArrowClicked ? "w-2" : "w-2 rotate-90"}
-                />
-                <div className={`${isSubClicked} ${isSubVisible}`}>
-                  <Link
-                    href={""}
-                    onClick={() => SetActiveLink("subLink1")}
-                    className={
-                      activeLink === "subLink1"
-                        ? `text-lg lg:bg-[--primary-color] lg:rounded-full lg:px-4 lg:py-3 ${servicesOpen}`
-                        : `text-lg lg:px-4 lg:py-3 ${servicesOpen}`
-                    }
-                  >
-                    transports
-                  </Link>
-                  <Link
-                    href={""}
-                    onClick={() => SetActiveLink("subLink2")}
-                    className={
-                      activeLink === "subLink2"
-                        ? `text-lg lg:bg-[--primary-color] lg:rounded-full lg:px-4 lg:py-3 ${servicesOpen}`
-                        : `text-lg lg:px-4 lg:py-3 ${servicesOpen}`
-                    }
-                  >
-                    transports
-                  </Link>
-                  <Link
-                    href={""}
-                    onClick={() => SetActiveLink("subLink3")}
-                    className={
-                      activeLink === "subLink3"
-                        ? `text-lg lg:bg-[--primary-color] lg:rounded-full lg:px-4 lg:py-3 ${servicesOpen}`
-                        : `text-lg lg:px-4 lg:py-3 ${servicesOpen}`
-                    }
-                  >
-                    transports
-                  </Link>
-                </div>
-              </Link>
-            </div>
-          </li>
-          <li>
-            <Link
-              href={""}
-              onClick={() => SetActiveLink("link4")}
-              className={
-                activeLink === "link4"
-                  ? "text-white text-2xl ml-10 lg:text-xl lg:ml-0 lg:py-3 lg:px-4 lg:bg-[--primary-color] lg:rounded-full"
-                  : "text-white text-2xl ml-10 lg:text-xl lg:ml-0 lg:px-4 lg:py-3"
-              }
-            >
-              blablabla
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={""}
-              onClick={() => SetActiveLink("link5")}
-              className={
-                activeLink === "link5"
-                  ? "text-white text-2xl ml-10 lg:text-xl lg:ml-0 lg:py-3 lg:px-4 lg:bg-[--primary-color] lg:rounded-full"
-                  : "text-white text-2xl ml-10 lg:text-xl lg:ml-0 lg:px-4 lg:py-3"
-              }
-            >
-              blablabla
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={""}
-              onClick={() => SetActiveLink("link6")}
+              onClick={() => SetActiveLink("link8")}
               className={
                 activeLink === "link6"
                   ? "text-white text-2xl ml-10 lg:text-xl lg:ml-0 lg:py-3 lg:px-4 lg:bg-[--primary-color] lg:rounded-full"
                   : "text-white text-2xl ml-10 lg:text-xl lg:ml-0 lg:px-4 lg:py-3"
               }
             >
-              blablabla
+              Mes démarches
             </Link>
           </li>
         </ul>
