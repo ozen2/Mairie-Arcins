@@ -42,8 +42,8 @@ export default function NavItem({
               onClick={() => SetActiveLink(subMenu.name)}
               className={
                 activeLink === subMenu.name
-                  ? "text-xl text-white lg:bg-[--primary-color] lg:rounded-full"
-                  : "text-xl text-white"
+                  ? "text-lg text-white lg:bg-[--primary-color] lg:rounded-full lg:px-4"
+                  : "text-lg text-white"
               }
             >
               {subMenu.name}

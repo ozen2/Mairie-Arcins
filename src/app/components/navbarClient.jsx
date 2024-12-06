@@ -14,7 +14,6 @@ import LogoArcins from "../../../public/logoArcinsWhite.svg";
 export default function NavbarClient() {
   const [IsBurgerClicked, SetIsBurgerClicked] = useState(false);
   const [IsNavVisible, SetIsNavVisible] = useState(false);
-  const [IsServicesClicked, SetIsServicesClicked] = useState(false);
   const [activeLink, SetActiveLink] = useState("link1");
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -52,8 +51,8 @@ export default function NavbarClient() {
 
   const isSubVisible = (menu) =>
     activeMenu === menu
-      ? "flex flex-col mt-5 opacity-100 mx-12 lg:mx-0 duration-300 rounded-xl gap-5 lg:gap-2 top-10 lg:flex-row lg:bg-[--secondary-color] lg:rounded-full lg:mt-3 lg:px-4 lg:py-2 lg:absolute lg:flex-wrap lg:w-full"
-      : "flex opacity-0 duration-300 rounded-xl flex-col gap-5 lg:gap-2 top-10 lg:flex-row lg:bg-[--secondary-color] lg:absolute lg:w-full";
+      ? "flex flex-col mt-5 opacity-100 mx-12 lg:mx-0 duration-300 rounded-full gap-5 lg:gap-10 top-[4.5rem] lg:flex-row lg:bg-[--secondary-alternative-color] lg:rounded-lg lg:mt-0 lg:py-4 lg:absolute lg:flex-wrap lg:w-auto lg:left-0 lg:justify-center lg:px-2"
+      : "flex opacity-0 duration-300 rounded-full flex-col gap-5 top-10 lg:flex-row lg:bg-[--secondary-color] lg:absolute lg:w-full";
 
   const isSubClicked = (menu) => (activeMenu === menu ? "block" : "hidden");
 
@@ -117,17 +116,17 @@ export default function NavbarClient() {
             )}`}
             subMenus={[
               {
-                name: ". Histoire et patrimoine",
+                name: "Histoire et patrimoine",
                 href: "/presentation/histoire",
               },
-              { name: ". Plan google", href: "/presentation/equipe" },
-              { name: ". Derniers recensement", href: "/presentation/vision" },
-              { name: ". Équipements", href: "/presentation/vision" },
-              { name: ". Actualité", href: "/presentation/vision" },
-              { name: ". Évènements", href: "/presentation/vision" },
-              { name: ". Arcins en images", href: "/presentation/vision" },
+              { name: "Plan google", href: "/presentation/equipe" },
+              { name: "Derniers recensement", href: "/presentation/vision" },
+              { name: "Équipements", href: "/presentation/vision" },
+              { name: "Actualité", href: "/presentation/vision" },
+              { name: "Évènements", href: "/presentation/vision" },
+              { name: "Arcins en images", href: "/presentation/vision" },
               {
-                name: ". Plan communal de sauvegarde",
+                name: "Plan communal de sauvegarde",
                 href: "/presentation/vision",
               },
             ]}
@@ -142,9 +141,16 @@ export default function NavbarClient() {
             toggleMenu={() => toggleMenu("mairie")}
             divClassName={`${isSubClicked("mairie")} ${isSubVisible("mairie")}`}
             subMenus={[
-              { name: "Histoire", href: "/mairie/histoire" },
-              { name: "Équipe", href: "/mairie/equipe" },
-              { name: "Vision", href: "/mairie/vision" },
+              { name: "Actualités", href: "/mairie/histoire" },
+              { name: "Agenda", href: "/mairie/equipe" },
+              { name: "Services municipaux", href: "/mairie/vision" },
+              { name: "Le conseil", href: "/mairie/histoire" },
+              { name: "Services", href: "/mairie/equipe" },
+              { name: "Intercommunalité", href: "/mairie/vision" },
+              { name: "Magazines municipaux", href: "/mairie/histoire" },
+              { name: "Budget communal", href: "/mairie/equipe" },
+              { name: "Marches publiques", href: "/mairie/vision" },
+              { name: "Cimetière", href: "/mairie/vision" },
             ]}
           />
           <NavItem
@@ -157,9 +163,21 @@ export default function NavbarClient() {
             toggleMenu={() => toggleMenu("vivre")}
             divClassName={`${isSubClicked("vivre")} ${isSubVisible("vivre")}`}
             subMenus={[
-              { name: "Histoire", href: "/vivre/histoire" },
-              { name: "Équipe", href: "/vivre/equipe" },
-              { name: "Vision", href: "/vivre/vision" },
+              { name: "Commerces", href: "/vivre/histoire" },
+              { name: "Restaurants", href: "/vivre/equipe" },
+              { name: "Artisans", href: "/vivre/vision" },
+              { name: "Visites et découvertes", href: "/vivre/histoire" },
+              { name: "Randonnées", href: "/vivre/equipe" },
+              { name: "Chateaux", href: "/vivre/vision" },
+              { name: "Enfance / jeunesse", href: "/vivre/histoire" },
+              { name: "Éducation", href: "/vivre/equipe" },
+              { name: "Sport / culture / loisirs", href: "/vivre/vision" },
+              { name: "Transports", href: "/vivre/vision" },
+              { name: "Social emploi", href: "/vivre/vision" },
+              { name: "Associations", href: "/vivre/vision" },
+              { name: "Voisins vigilants", href: "/vivre/vision" },
+              { name: "Hébergements", href: "/vivre/vision" },
+              { name: "Déchets", href: "/vivre/vision" },
             ]}
           />
           <NavItem
@@ -172,10 +190,10 @@ export default function NavbarClient() {
             toggleMenu={() => toggleMenu("famille")}
             divClassName={`${isSubClicked("famille")} ${isSubVisible(
               "famille"
-            )}`}
+            )} lg:left-1/2 lg:-translate-x-1/2 lg:px-6`}
             subMenus={[
-              { name: "Histoire", href: "/famille/histoire" },
-              { name: "Équipe", href: "/famille/equipe" },
+              { name: "Menus cantine", href: "/famille/histoire" },
+              { name: "Accès direct", href: "/famille/equipe" },
               { name: "Vision", href: "/famille/vision" },
             ]}
           />
