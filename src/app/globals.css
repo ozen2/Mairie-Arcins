@@ -178,48 +178,53 @@ a {
 .carousselAnim {
   background-size: cover;
   background-position: center;
-  animation: fade 16s infinite;
+  animation: fade 20s infinite;
 }
 
 @keyframes fade {
+  0%,
+  20% {
+    background-image: url("/mairie.jpg");
+  }
+  20%,
+  45% {
+    background-image: url("/port1.jpg");
+  }
+  50%,
+  70% {
+    background-image: url("/église.jpg");
+  }
+  75%,
+  95% {
+    background-image: url("/port4.jpg");
+  }
+  100%,
   0% {
-    background-image: url("../../public/image.png");
-  }
-  25% {
-    background-image: url("../../public/image copy 2.png");
-  }
-  50% {
-    background-image: url("../../public/image.png");
-  }
-  75% {
-    background-image: url("../../public/image copy 2.png");
-  }
-  100% {
-    background-image: url("../../public/image.png");
+    background-image: url("/port5.jpg");
   }
 }
 
 .carousselAnim2 {
   background-size: cover;
   background-position: center;
-  animation: fade2 16s infinite;
+  animation: fade2 10s infinite;
 }
 
 @keyframes fade2 {
   0% {
-    background-image: url("../../public/image.png");
+    background-image: url("/image.png");
   }
   25% {
-    background-image: url("../../public/image copy 2.png");
+    background-image: url("/image copy 2.png");
   }
   50% {
-    background-image: url("../../public/image.png");
+    background-image: url("/image.png");
   }
   75% {
-    background-image: url("../../public/image copy 2.png");
+    background-image: url("/image copy 2.png");
   }
   100% {
-    background-image: url("../../public/image.png");
+    background-image: url("/image.png");
   }
 }
 

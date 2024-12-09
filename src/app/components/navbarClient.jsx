@@ -194,7 +194,6 @@ export default function NavbarClient() {
             subMenus={[
               { name: "Menus cantine", href: "/famille/histoire" },
               { name: "Accès direct", href: "/famille/equipe" },
-              { name: "Vision", href: "/famille/vision" },
             ]}
           />
           <li>
