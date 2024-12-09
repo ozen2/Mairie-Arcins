@@ -36,7 +36,7 @@ export default function Footer() {
                 href="https://www.facebook.com/pages/Mairie%20d'Arcins/255579984913819/"
                 target="/blank"
               >
-                <Image src={facebook} className="w-10" />
+                <Image src={facebook} alt="lien facebook" className="w-10" />
               </a>
             </li>
           </div>

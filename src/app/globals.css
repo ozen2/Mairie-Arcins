@@ -178,29 +178,29 @@ a {
 .carousselAnim {
   background-size: cover;
   background-position: center;
-  animation: fade 20s infinite;
+  animation: fade 60s infinite;
 }
 
 @keyframes fade {
   0%,
   20% {
-    background-image: url("/mairie.jpg");
+    background-image: url("/mairie.webp");
   }
   20%,
-  45% {
-    background-image: url("/port1.jpg");
+  40% {
+    background-image: url("/port1.webp");
   }
-  50%,
-  70% {
-    background-image: url("/église.jpg");
+  40%,
+  60% {
+    background-image: url("/eglise.webp");
   }
-  75%,
-  95% {
-    background-image: url("/port4.jpg");
+  60%,
+  80% {
+    background-image: url("/port4.webp");
   }
-  100%,
-  0% {
-    background-image: url("/port5.jpg");
+  80%,
+  100% {
+    background-image: url("/port5.webp");
   }
 }
 

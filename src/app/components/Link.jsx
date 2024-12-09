@@ -8,7 +8,12 @@ export default function LinkGen({ link, name }) {
   return (
     <Link href={link} className="text-[--primary-color] self-end">
       <span className="animated-underline">{name}</span>
-      <Image src={arrow} width={18} className="ml-2 inline-block" />
+      <Image
+        src={arrow}
+        alt="flèche"
+        width={18}
+        className="ml-2 inline-block"
+      />
     </Link>
   );
 }
