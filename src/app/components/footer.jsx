@@ -20,7 +20,15 @@ export default function Footer() {
           </li>
         </ul>
         <ul className="flex flex-col items-center gap-2">
-          <li className="text-white font-light">Tel : 05 56 58 93 90</li>
+          <li className="text-white font-light">
+            Tel :{" "}
+            <a
+              href="tel:0556589390"
+              className="text-green-300 underline hover:text-green-600 font-light"
+            >
+              05 56 58 93 90
+            </a>
+          </li>
           <li className="text-white font-light">
             Mail :{" "}
             <a

@@ -176,31 +176,71 @@ a {
 }
 
 .carousselAnim {
-  background-size: cover;
-  background-position: center;
-  animation: fade 60s infinite;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes fade {
+.carousel-image {
+  position: absolute;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  will-change: opacity, z-index;
+  height: clamp(24rem, 50vh, 60rem);
+  width: 32rem;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+@media (min-width: 1024px) {
+  .carousel-image {
+    height: 40rem;
+  }
+}
+
+.carousel-image:nth-child(1) {
+  animation: fadeOut 60s infinite;
+  animation-delay: 0s;
+  z-index: 5;
+}
+
+.carousel-image:nth-child(2) {
+  animation: fadeOut 60s infinite;
+  animation-delay: 12s;
+  z-index: 4;
+}
+
+.carousel-image:nth-child(3) {
+  animation: fadeOut 60s infinite;
+  animation-delay: 24s;
+  z-index: 3;
+}
+
+.carousel-image:nth-child(4) {
+  animation: fadeOut 60s infinite;
+  animation-delay: 36s;
+  z-index: 2;
+}
+
+.carousel-image:nth-child(5) {
+  animation: fadeOut 60s infinite;
+  animation-delay: 48s;
+  z-index: 1;
+}
+
+@keyframes fadeOut {
   0%,
-  20% {
-    background-image: url("/mairie.webp");
+  19% {
+    opacity: 1;
   }
   20%,
-  40% {
-    background-image: url("/port1.webp");
+  99% {
+    opacity: 0;
   }
-  40%,
-  60% {
-    background-image: url("/eglise.webp");
-  }
-  60%,
-  80% {
-    background-image: url("/port4.webp");
-  }
-  80%,
   100% {
-    background-image: url("/port5.webp");
+    opacity: 1;
   }
 }
 
@@ -208,24 +248,6 @@ a {
   background-size: cover;
   background-position: center;
   animation: fade2 10s infinite;
-}
-
-@keyframes fade2 {
-  0% {
-    background-image: url("/image.png");
-  }
-  25% {
-    background-image: url("/image copy 2.png");
-  }
-  50% {
-    background-image: url("/image.png");
-  }
-  75% {
-    background-image: url("/image copy 2.png");
-  }
-  100% {
-    background-image: url("/image.png");
-  }
 }
 
 @media (min-width: 1024px) {

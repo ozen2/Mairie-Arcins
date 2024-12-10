@@ -3,6 +3,11 @@ import Image from "next/image";
 import logoArcins from "../../public/logoArcins.svg";
 import stat from "../../public/stat.svg";
 import search from "../../public/loupe.svg";
+import mairie from "../../public/mairie.webp";
+import eglise from "../../public/eglise.webp";
+import port1 from "../../public/port1.webp";
+import port4 from "../../public/port4.webp";
+import port5 from "../../public/port5.webp";
 
 import Card from "./components/card";
 import Navbar from "./components/navbarClient";
@@ -35,7 +40,83 @@ export default function Home() {
           <Image src={search} className="w-10 bg-white rounded-r-full px-2" />
         </label>
         <article>
-          <div className="carousselAnim h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] rounded-tr-[5rem] rounded-md lg:shrink-0"></div>
+          <section className="flex flex-col gap-8 lg:flex-row lg:gap-20">
+            <div className="carousselAnim h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem] lg:shrink-0">
+              <Image
+                src={mairie.src}
+                alt="Mairie"
+                width={1920}
+                height={1080}
+                priority
+                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem]"
+              />
+              <Image
+                src={port1.src}
+                alt="Port1"
+                width={1920}
+                height={1080}
+                priority
+                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem]"
+              />
+              <Image
+                src={eglise.src}
+                alt="Église"
+                width={1920}
+                height={1080}
+                priority
+                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem] rotate-90"
+              />
+              <Image
+                src={port4.src}
+                alt="Port4"
+                width={1920}
+                height={1080}
+                priority
+                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem]"
+              />
+              <Image
+                src={port5.src}
+                alt="Port5"
+                width={1920}
+                height={1080}
+                priority
+                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem]"
+              />
+            </div>
+            <div className="flex flex-col lg:justify-between gap-10 lg:max-h-[40rem]">
+              <div className="flex flex-col gap-4">
+                <h1 className="font-medium">Bienvenue à Arcins</h1>
+                <p className="font-normal">
+                  Arcins est un charmant village situé dans le Médoc, une région
+                  renommée pour ses paysages viticoles et son patrimoine
+                  naturel.
+                </p>
+                <p className="lineClamp3 font-normal">
+                  Nichée entre les prestigieux vignobles de Margaux et
+                  Saint-Julien, la commune offre une atmosphère paisible et
+                  authentique, idéale pour les amoureux de la nature et de la
+                  tranquillité.
+                </p>
+                <p className="lineClamp display-none2 font-normal">
+                  Avec une population d’environ 350 habitants, Arcins cultive un
+                  esprit convivial et chaleureux, où chaque habitant contribue à
+                  la vie locale. La commune est également bordée par l’estuaire
+                  de la Gironde, offrant des points de vue uniques et des
+                  activités nautiques pour les amateurs de plein air.
+                </p>
+                <p className="display-none lineClamp2 font-normal">
+                  Fière de son patrimoine, Arcins abrite des édifices
+                  historiques tels que l’église Saint-Martin et se distingue par
+                  son implication dans la préservation de l’environnement. C'est
+                  une destination parfaite pour découvrir l’art de vivre
+                  médocain et la richesse culturelle de la région.
+                </p>
+              </div>
+              <div className="lg:flex lg:justify-start justify-end flex">
+                <LinkGen name="En savoir plus" link="#" />
+              </div>
+            </div>
+          </section>
           <h1 className="font-medium mt-20">En ce moment…</h1>
           <p>Découvrez les actualités de la commune</p>
           <section className="flex flex-col items-center md:flex-row md:overflow-x-auto gap-8 scrollbar-none mb-10 -mx-7 px-7">
