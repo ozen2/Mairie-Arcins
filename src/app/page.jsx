@@ -41,14 +41,14 @@ export default function Home() {
         </label>
         <article>
           <section className="flex flex-col gap-8 lg:flex-row lg:gap-20">
-            <div className="carousselAnim h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem] lg:shrink-0">
+            <div className="carousselAnim h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-md rounded-tr-[4rem] lg:shrink-0">
               <Image
                 src={mairie.src}
                 alt="Mairie"
                 width={1920}
                 height={1080}
                 priority
-                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem]"
+                className="carousel-image h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-md rounded-tr-[4rem]"
               />
               <Image
                 src={port1.src}
@@ -56,7 +56,7 @@ export default function Home() {
                 width={1920}
                 height={1080}
                 priority
-                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem]"
+                className="carousel-image h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-md rounded-tr-[4rem]"
               />
               <Image
                 src={eglise.src}
@@ -64,7 +64,7 @@ export default function Home() {
                 width={1920}
                 height={1080}
                 priority
-                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem] rotate-90"
+                className="carousel-image h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-md rounded-tr-[4rem] rotate-90"
               />
               <Image
                 src={port4.src}
@@ -72,7 +72,7 @@ export default function Home() {
                 width={1920}
                 height={1080}
                 priority
-                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem]"
+                className="carousel-image h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-md rounded-tr-[4rem]"
               />
               <Image
                 src={port5.src}
@@ -80,7 +80,7 @@ export default function Home() {
                 width={1920}
                 height={1080}
                 priority
-                className="carousel-image h-[clamp(24rem,50vh,60rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-tr-[4rem]"
+                className="carousel-image h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tr-[5rem] rounded-md rounded-tr-[4rem]"
               />
             </div>
             <div className="flex flex-col lg:justify-between gap-10 lg:max-h-[40rem]">
@@ -106,7 +106,7 @@ export default function Home() {
                 </p>
                 <p className="display-none lineClamp2 font-normal">
                   Fière de son patrimoine, Arcins abrite des édifices
-                  historiques tels que l’église Saint-Martin et se distingue par
+                  historiques tels que Notre Dame d'Arcins et se distingue par
                   son implication dans la préservation de l’environnement. C'est
                   une destination parfaite pour découvrir l’art de vivre
                   médocain et la richesse culturelle de la région.
@@ -131,7 +131,7 @@ export default function Home() {
           </div>
           <section className="mt-20 flex flex-col mb-20">
             <h1 className="font-medium">Derniers recensements</h1>
-            <div className="flex justify-between mt-10">
+            <div className="flex justify-between lg:justify-around mt-10">
               <div>
                 <h2 className="font-medium md:text-5xl">100+</h2>
                 <p className="font-light md:text-2xl">Lorem ipsum</p>
@@ -146,7 +146,7 @@ export default function Home() {
               alt=""
               className="self-center mt-5 w-[clamp(50px,80%,400px)] h-auto"
             />
-            <div className="flex justify-between mt-5 mb-10">
+            <div className="flex justify-between lg:justify-around mt-5 mb-10">
               <div>
                 <h2 className="font-medium md:text-5xl">55</h2>
                 <p className="font-light md:text-2xl">Lorem ipsum</p>
@@ -158,20 +158,58 @@ export default function Home() {
             </div>
             <LinkGen name="En savoir plus" link="#" />
           </section>
-          <section className="flex flex-col">
-            <h1 className="font-medium">Commerces et hébergements</h1>
-            <p className="font-light mb-10 md:text-2xl">
-              Une séléction de commerces et hébergements au coeur de la commune
-            </p>
-            <div className="h-[clamp(24rem,50vh,60rem)] rounded-tl-[5rem] mb-10 rounded-md carousselAnim2"></div>
-            <p className="font-light text-justify mb-10">
-              Notre commune vous offre une variété de commerces de proximité et
-              de restaurants pour répondre à vos besoins quotidiens, ainsi que
-              des hébergements chaleureux et accueillants pour vos séjours. Que
-              vous soyez résident ou visiteur, découvrez des services locaux qui
-              allient authenticité et convivialité.
-            </p>
-            <LinkGen name="En savoir plus" link="#" />
+          <section className="flex flex-col gap-8 lg:gap-20 lg:flex-row-reverse">
+            <div className="carousselAnim2 h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tl-[5rem] rounded-md rounded-tl-[4rem] lg:shrink-0">
+              <Image
+                src={mairie.src}
+                alt="Mairie"
+                width={1920}
+                height={1080}
+                loading="lazy"
+                className="carousel-image2 h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tl-[5rem] rounded-md rounded-tl-[4rem]"
+              />
+              <Image
+                src={port1.src}
+                alt="Port1"
+                width={1920}
+                height={1080}
+                loading="lazy"
+                className="carousel-image2 h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tl-[5rem] rounded-md rounded-tl-[4rem]"
+              />
+              <Image
+                src={eglise.src}
+                alt="Église"
+                width={1920}
+                height={1080}
+                loading="lazy"
+                className="carousel-image2 h-[clamp(32rem,70vh,90rem)] lg:w-[32rem] lg:h-[40rem] lg:rounded-tl-[5rem] rounded-md rounded-tl-[4rem] rotate-90"
+              />
+            </div>
+            <div className="flex flex-col justify-between gap-10">
+              <div className="flex flex-col">
+                <h1 className="font-medium">Commerces et hébergements</h1>
+                <p className="font-light md:text-2xl">
+                  Une séléction de commerces et hébergements au coeur de la
+                  commune
+                </p>
+              </div>
+              <p className="font-normal text-justify">
+                Notre commune vous offre une variété de commerces de proximité
+                et de restaurants pour répondre à vos besoins quotidiens, ainsi
+                que des hébergements chaleureux et accueillants pour vos
+                séjours. Que vous soyez résident ou visiteur, découvrez des
+                services locaux qui allient authenticité et convivialité.
+              </p>
+              <p className="font-normal lineClamp">
+                Explorez les produits du terroir dans nos marchés et épiceries,
+                savourez des plats préparés avec passion par nos restaurateurs,
+                et profitez d'une ambiance paisible dans nos hébergements,
+                situés au cœur d'un cadre naturel préservé. Arcins est une
+                destination où chaque rencontre et chaque expérience reflètent
+                l'âme de notre territoire.
+              </p>
+              <LinkGen name="En savoir plus" link="#" />
+            </div>
           </section>
         </article>
       </main>
