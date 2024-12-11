@@ -19,8 +19,8 @@ export default function NavItem({
           href="#"
           className={
             IsSubMenuClicked
-              ? "text-white text-2xl ml-10 flex gap-4 lg:pb-0 transition-all ease-in-out duration-300 lg:text-xl lg:ml-0 lg:px-4 relative"
-              : "text-white text-2xl ml-10 flex gap-4 lg:text-xl lg:ml-0 lg:px-4 relative"
+              ? "text-white hover:text-slate-200 text-2xl ml-10 flex gap-4 lg:pb-0 transition-all ease-in-out duration-300 lg:text-xl lg:ml-0 lg:px-4 relative"
+              : "text-white hover:text-slate-200 text-2xl ml-10 flex gap-4 lg:text-xl lg:ml-0 lg:px-4 relative"
           }
           onClick={(e) => {
             e.preventDefault();
@@ -42,11 +42,11 @@ export default function NavItem({
               onClick={() => SetActiveLink(subMenu.name)}
               className={
                 activeLink === subMenu.name
-                  ? "text-lg text-white lg:bg-[--primary-color] lg:rounded-full lg:px-4"
-                  : "text-lg text-white"
+                  ? "text-lg text-white hover:text-slate-200 lg:bg-[--primary-color] lg:rounded-full lg:px-4"
+                  : "text-lg text-white hover:text-slate-200"
               }
             >
-              {subMenu.name}
+              <span className="animated-underline2">{subMenu.name}</span>
             </Link>
           ))}
         </div>

@@ -10,7 +10,7 @@ export default function LinkGen({ link, name }) {
       <span className="animated-underline">{name}</span>
       <Image
         src={arrow}
-        alt="flèche"
+        alt="lien de redirection"
         width={18}
         className="ml-2 inline-block"
       />
