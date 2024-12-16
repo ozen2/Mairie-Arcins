@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import useScrollPosition from "../services/useScrollPosition";
 import NavItem from "./NavItem";
-import NavSubItem from "./NavItem";
 
 import Arrow from "../../../public/arrow.svg";
 import LogoArcins from "../../../public/logoArcinsWhite.svg";
@@ -17,6 +17,8 @@ export default function NavbarClient() {
   const [activeLink, SetActiveLink] = useState("link1");
   const [activeMenu, setActiveMenu] = useState(null);
 
+  const pathname = usePathname();
+
   const scrollPosition = useScrollPosition();
 
   const navPosition = scrollPosition > 50 ? "top-5" : "top-28";
@@ -26,10 +28,8 @@ export default function NavbarClient() {
     if (IsNavVisible) {
       setTimeout(() => {
         SetIsNavVisible(false);
-        document.body.classList.remove("no-scroll");
       }, 500);
     }
-
     setTimeout(() => {
       SetIsBurgerClicked(!IsBurgerClicked);
     }, 1);
@@ -45,7 +45,7 @@ export default function NavbarClient() {
 
   const isOpen = IsBurgerClicked
     ? "bg-[--primary-color] absolute z-20 w-full h-[100rem] top-0 left-0 duration-500 ease-in-out items-start flex flex-col gap-10 lg:gap-2"
-    : "bg-[--primary-color] absolute z-20 h-0 w-full top-0 left-0 -translate-y-[50rem] duration-700 ease-in-out items-start flex flex-col gap-10 lg:gap-2";
+    : "bg-[--primary-color] absolute z-20 h-0 w-full top-0 left-0 translate-x-[50rem] duration-700 ease-in-out items-start flex flex-col gap-10 lg:gap-2";
 
   const isVisible = IsNavVisible ? "block" : "hidden";
 
@@ -92,10 +92,10 @@ export default function NavbarClient() {
         <ul className="flex flex-col flex-wrap gap-10 md:flex-row md:flex-wrap lg:gap-0 lg:justify-between lg:px-2 lg:w-full">
           <li>
             <Link
-              href={""}
-              onClick={() => SetActiveLink("link1")}
+              href="/"
+              onClick={toggleNav}
               className={
-                activeLink === "link1"
+                pathname === "/"
                   ? "mt-10 md:mt-0 ml-10 mr-10 text-white text-2xl lg:text-xl lg:ml-0 lg:mr-0 lg:px-4 lg:py-3 lg:bg-[--primary-color] lg:rounded-full"
                   : "mt-10 md:mt-0 ml-10 mr-10 text-white text-2xl lg:text-xl lg:ml-0 lg:mr-0 lg:px-4 lg:py-3"
               }
@@ -104,104 +104,127 @@ export default function NavbarClient() {
             </Link>
           </li>
           <NavItem
-            IsSubMenuClicked={activeMenu === "presentation"}
-            IsArrowClicked={activeMenu === "presentation"}
+            IsSubMenuClicked={activeMenu === "Presentation"}
+            IsArrowClicked={activeMenu === "Presentation"}
             Arrow={Arrow}
             activeLink={activeLink}
             SetActiveLink={SetActiveLink}
             name="Présentation"
-            toggleMenu={() => toggleMenu("presentation")}
-            divClassName={`${isSubClicked("presentation")} ${isSubVisible(
-              "presentation"
+            pathname={pathname}
+            toggleMenu={() => toggleMenu("Presentation")}
+            divClassName={`${isSubClicked("Presentation")} ${isSubVisible(
+              "Presentation"
             )}`}
             subMenus={[
               {
                 name: "Histoire et patrimoine",
-                href: "/presentation/histoire",
+                href: "/Presentation/Histoire&Patrimoine",
               },
-              { name: "Plan google", href: "/presentation/equipe" },
-              { name: "Derniers recensement", href: "/presentation/vision" },
-              { name: "Équipements", href: "/presentation/vision" },
-              { name: "Actualité", href: "/presentation/vision" },
-              { name: "Évènements", href: "/presentation/vision" },
-              { name: "Arcins en images", href: "/presentation/vision" },
+              { name: "Plan google", href: "/Presentation/PlanGoogle" },
+              {
+                name: "Derniers recensement",
+                href: "/Presentation/DerniersRecensements",
+              },
+              { name: "Équipements", href: "/Presentation/Equipements" },
+              {
+                name: "Arcins en images",
+                href: "/Presentation/ArcinsenImages",
+              },
               {
                 name: "Plan communal de sauvegarde",
-                href: "/presentation/vision",
+                href: "/Presentation/PlanCommunaldeSauvegarde",
               },
             ]}
           />
           <NavItem
-            IsSubMenuClicked={activeMenu === "mairie"}
-            IsArrowClicked={activeMenu === "mairie"}
+            IsSubMenuClicked={activeMenu === "Mairie"}
+            IsArrowClicked={activeMenu === "Mairie"}
             Arrow={Arrow}
             activeLink={activeLink}
             SetActiveLink={SetActiveLink}
             name="Mairie"
-            toggleMenu={() => toggleMenu("mairie")}
-            divClassName={`${isSubClicked("mairie")} ${isSubVisible("mairie")}`}
+            pathname={pathname}
+            toggleMenu={() => toggleMenu("Mairie")}
+            divClassName={`${isSubClicked("Mairie")} ${isSubVisible("Mairie")}`}
             subMenus={[
-              { name: "Actualités", href: "/mairie/histoire" },
-              { name: "Agenda", href: "/mairie/equipe" },
-              { name: "Services municipaux", href: "/mairie/vision" },
-              { name: "Le conseil", href: "/mairie/histoire" },
-              { name: "Services", href: "/mairie/equipe" },
-              { name: "Intercommunalité", href: "/mairie/vision" },
-              { name: "Magazines municipaux", href: "/mairie/histoire" },
-              { name: "Budget communal", href: "/mairie/equipe" },
-              { name: "Marches publiques", href: "/mairie/vision" },
-              { name: "Cimetière", href: "/mairie/vision" },
+              {
+                name: "Actualités / Agenda / Évènements",
+                href: "/Mairie/Actualites",
+              },
+              {
+                name: "Services municipaux",
+                href: "/Mairie/ServicesMunicipaux",
+              },
+              { name: "Le conseil", href: "/Mairie/LeConseil" },
+              { name: "Services", href: "/Mairie/Services" },
+              { name: "Intercommunalité", href: "/Mairie/Intercommunalite" },
+              {
+                name: "Magazines municipaux",
+                href: "/Mairie/MagazinesMunicipaux",
+              },
+              { name: "Budget communal", href: "/Mairie/BudgetCommunal" },
+              { name: "Marches publiques", href: "/Mairie/MarchesPubliques" },
+              { name: "Cimetière", href: "/Mairie/Cimetiere" },
             ]}
           />
           <NavItem
-            IsSubMenuClicked={activeMenu === "vivre"}
-            IsArrowClicked={activeMenu === "vivre"}
+            IsSubMenuClicked={activeMenu === "Vivre"}
+            IsArrowClicked={activeMenu === "Vivre"}
             Arrow={Arrow}
             activeLink={activeLink}
             SetActiveLink={SetActiveLink}
             name="Vivre"
-            toggleMenu={() => toggleMenu("vivre")}
-            divClassName={`${isSubClicked("vivre")} ${isSubVisible("vivre")}`}
+            pathname={pathname}
+            toggleMenu={() => toggleMenu("Vivre")}
+            divClassName={`${isSubClicked("Vivre")} ${isSubVisible("Vivre")}`}
             subMenus={[
-              { name: "Commerces", href: "/vivre/histoire" },
-              { name: "Restaurants", href: "/vivre/equipe" },
-              { name: "Artisans", href: "/vivre/vision" },
-              { name: "Visites et découvertes", href: "/vivre/histoire" },
-              { name: "Randonnées", href: "/vivre/equipe" },
-              { name: "Chateaux", href: "/vivre/vision" },
-              { name: "Enfance / jeunesse", href: "/vivre/histoire" },
-              { name: "Éducation", href: "/vivre/equipe" },
-              { name: "Sport / culture / loisirs", href: "/vivre/vision" },
-              { name: "Transports", href: "/vivre/vision" },
-              { name: "Social emploi", href: "/vivre/vision" },
-              { name: "Associations", href: "/vivre/vision" },
-              { name: "Voisins vigilants", href: "/vivre/vision" },
-              { name: "Hébergements", href: "/vivre/vision" },
-              { name: "Déchets", href: "/vivre/vision" },
+              {
+                name: "Commerces / Restaurants / Artisants",
+                href: "/Vivre/CommercesRestaurantsArtisants",
+              },
+              {
+                name: "Visites et découvertes",
+                href: "/Vivre/Visites&Decouvertes",
+              },
+              { name: "Chateaux", href: "/Vivre/Chateaux" },
+              {
+                name: "Enfance / Jeunesse / Éducation",
+                href: "/Vivre/EnfanceJeunesseEducation",
+              },
+              {
+                name: "Sport / Culture / Loisirs",
+                href: "/Vivre/SportCultureLoisirs",
+              },
+              { name: "Transports", href: "/Vivre/Transports" },
+              { name: "Social emploi", href: "/Vivre/SocialEmploi" },
+              { name: "Associations", href: "/Vivre/Associations" },
+              { name: "Voisins vigilants", href: "/Vivre/VoisinsVigilants" },
+              { name: "Hébergements", href: "/Vivre/Hebergements" },
+              { name: "Déchets", href: "/Vivre/Dechets" },
             ]}
           />
           <NavItem
-            IsSubMenuClicked={activeMenu === "famille"}
-            IsArrowClicked={activeMenu === "famille"}
+            IsSubMenuClicked={activeMenu === "Famille"}
+            IsArrowClicked={activeMenu === "Famille"}
             Arrow={Arrow}
             activeLink={activeLink}
             SetActiveLink={SetActiveLink}
             name="Famille"
-            toggleMenu={() => toggleMenu("famille")}
-            divClassName={`${isSubClicked("famille")} ${isSubVisible(
-              "famille"
+            pathname={pathname}
+            toggleMenu={() => toggleMenu("Famille")}
+            divClassName={`${isSubClicked("Famille")} ${isSubVisible(
+              "Famille"
             )} lg:left-1/2 lg:-translate-x-1/2 lg:px-6`}
             subMenus={[
-              { name: "Menus cantine", href: "/famille/histoire" },
-              { name: "Accès direct", href: "/famille/equipe" },
+              { name: "Menus cantine", href: "/Famille/MenuCantine" },
+              { name: "Accès direct", href: "/Famille/AccesDirect" },
             ]}
           />
           <li>
             <Link
               href={""}
-              onClick={() => SetActiveLink("link8")}
               className={
-                activeLink === "link6"
+                pathname === "/MesDemarches"
                   ? "text-white text-2xl ml-10 lg:text-xl lg:ml-0 lg:py-3 lg:px-4 lg:bg-[--primary-color] lg:rounded-full"
                   : "text-white text-2xl ml-10 lg:text-xl lg:ml-0 lg:px-4 lg:py-3"
               }

@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import logoArcins from "../../public/logoArcins.svg";
 import stat from "../../public/stat.svg";
 import search from "../../public/loupe.svg";
 import mairie from "../../public/mairie.webp";
@@ -10,21 +9,12 @@ import port4 from "../../public/port4.webp";
 import port5 from "../../public/port5.webp";
 
 import Card from "./components/card";
-import Navbar from "./components/navbarClient";
 import Footer from "./components/footer";
 import LinkGen from "./components/Link";
 
 export default function Home() {
   return (
     <>
-      <header className="flex justify-between lg:justify-center items-center ml-7 mr-7">
-        <Image
-          src={logoArcins}
-          alt=""
-          className={`w-24 lg:w-40 mt-10 pb-12 lg:pb-36 lg:mt-5`}
-        />
-        <Navbar />
-      </header>
       <main className="flex flex-col ml-7 mr-7">
         <label
           htmlFor="searchInput"

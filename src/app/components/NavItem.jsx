@@ -5,18 +5,19 @@ export default function NavItem({
   IsSubMenuClicked,
   IsArrowClicked,
   Arrow,
-  activeLink,
+  toggleNav,
   SetActiveLink,
   name,
   toggleMenu,
   divClassName,
   subMenus = [],
+  pathname,
 }) {
   return (
     <li>
       <div>
         <Link
-          href="#"
+          href=""
           className={
             IsSubMenuClicked
               ? "text-white hover:text-slate-200 text-2xl ml-10 flex gap-4 lg:pb-0 transition-all ease-in-out duration-300 lg:text-xl lg:ml-0 lg:px-4 relative"
@@ -39,14 +40,18 @@ export default function NavItem({
             <Link
               key={index}
               href={subMenu.href}
-              onClick={() => SetActiveLink(subMenu.name)}
+              onClick={() => {
+                toggleNav();
+                SetActiveLink(subMenu.name);
+                toggleMenu();
+              }}
               className={
-                activeLink === subMenu.name
+                pathname === subMenu.href
                   ? "text-lg text-white hover:text-slate-200 lg:bg-[--primary-color] lg:rounded-full lg:px-4"
                   : "text-lg text-white hover:text-slate-200"
               }
             >
-              <span className="animated-underline2">{subMenu.name}</span>
+              <span className="lg:animated-underline2">{subMenu.name}</span>
             </Link>
           ))}
         </div>
