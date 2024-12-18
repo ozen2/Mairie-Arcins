@@ -10,7 +10,11 @@ export default function HistoirePatrimoine() {
       <p>Découvrez l'histoire de la commune</p>
       <section className="flex flex-col gap-10 lg:gap-20 mt-10">
         <div className="lg:flex lg:flex-row flex flex-col gap-5 lg:gap-10">
-          <Image src={Chateau} className="lg:w-[50%] rounded-md" alt="" />
+          <Image
+            src={Chateau}
+            className="lg:w-[50%] rounded-md object-cover"
+            alt=""
+          />
           <div className="flex flex-col gap-5 lg:gap-10">
             <h2>Le Château d'Arcins</h2>
             <p>
@@ -23,7 +27,11 @@ export default function HistoirePatrimoine() {
           </div>
         </div>
         <div className="lg:flex lg:flex-row-reverse flex flex-col gap-5 lg:gap-10">
-          <Image src={Eglise} className="lg:w-[50%] rounded-md" alt="" />
+          <Image
+            src={Eglise}
+            className="lg:w-[50%] object-cover rounded-md"
+            alt=""
+          />
           <div className="flex flex-col gap-5 lg:gap-10">
             <h2>L'église Notre-Dame</h2>
             <p className="lg:text-justify">
