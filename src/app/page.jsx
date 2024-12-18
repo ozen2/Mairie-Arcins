@@ -9,7 +9,6 @@ import port4 from "../../public/port4.webp";
 import port5 from "../../public/port5.webp";
 
 import Card from "./components/card";
-import Footer from "./components/footer";
 import LinkGen from "./components/Link";
 
 export default function Home() {
@@ -88,11 +87,11 @@ export default function Home() {
                   tranquillité.
                 </p>
                 <p className="lineClamp display-none2 font-normal">
-                  Avec une population d’environ 350 habitants, Arcins cultive un
-                  esprit convivial et chaleureux, où chaque habitant contribue à
-                  la vie locale. La commune est également bordée par l’estuaire
-                  de la Gironde, offrant des points de vue uniques et des
-                  activités nautiques pour les amateurs de plein air.
+                  Avec une population de plus de 550 habitants, Arcins cultive
+                  un esprit convivial et chaleureux, où chaque habitant
+                  contribue à la vie locale. La commune est également bordée par
+                  l’estuaire de la Gironde, offrant des points de vue uniques et
+                  des activités nautiques pour les amateurs de plein air.
                 </p>
                 <p className="display-none lineClamp2 font-normal">
                   Fière de son patrimoine, Arcins abrite des édifices
@@ -103,7 +102,10 @@ export default function Home() {
                 </p>
               </div>
               <div className="lg:flex lg:justify-start justify-end flex">
-                <LinkGen name="En savoir plus" link="#" />
+                <LinkGen
+                  name="En savoir plus"
+                  link="/Presentation/Histoire&Patrimoine"
+                />
               </div>
             </div>
           </section>
@@ -203,7 +205,6 @@ export default function Home() {
           </section>
         </article>
       </main>
-      <Footer />
     </>
   );
 }

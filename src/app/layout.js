@@ -1,6 +1,7 @@
 import "./globals.css";
 import Image from "next/image";
 import NavbarClient from "./components/navbarClient";
+import Footer from "./components/footer";
 
 import logoArcins from "../../public/logoArcins.svg";
 
@@ -22,8 +23,8 @@ export default function RootLayout({ children }) {
           />
           <NavbarClient />
         </header>
-
         {children}
+        <Footer />
       </body>
     </html>
   );
