@@ -119,7 +119,7 @@ export default function Home() {
             <Card />
           </section>
           <div className="flex justify-end">
-            <LinkGen name="En savoir plus" link="#" />
+            <LinkGen name="En savoir plus" link="/Mairie/Actualites" />
           </div>
           <section className="mt-20 flex flex-col mb-20">
             <h1 className="font-medium">Derniers recensements</h1>
