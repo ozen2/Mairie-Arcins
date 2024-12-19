@@ -37,6 +37,7 @@ export default function NavbarClient() {
 
   const toggleMenu = (menu) => {
     if (activeMenu === menu) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       setActiveMenu(null);
     } else {
       setActiveMenu(menu);
@@ -148,8 +149,12 @@ export default function NavbarClient() {
             divClassName={`${isSubClicked("Mairie")} ${isSubVisible("Mairie")}`}
             subMenus={[
               {
-                name: "Actualités / Agenda / Évènements",
+                name: "Actualités / Évènements",
                 href: "/Mairie/Actualites",
+              },
+              {
+                name: "Agenda",
+                href: "/Mairie/Agenda",
               },
               {
                 name: "Services municipaux",
