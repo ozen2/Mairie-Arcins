@@ -8,8 +8,8 @@
 
   --primary-color: #2f4f4f;
   --primary-hover: #446f6f;
-  --secondary-color: #a0b2a6;
-  --secondary-alternative-color: #84978c;
+  --secondary-color: #95b39f;
+  --secondary-alternative-color: #86a490;
   --primary-background-color: #f3f3f3;
 
   --text-title-desk-size: 4rem;
@@ -78,6 +78,12 @@ p {
   font-size: clamp(1.2rem, 2.8vw, 1.25rem);
   line-height: clamp(1.5, 1.6, 1.8);
   color: var(--secondary-color);
+  font-family: var(--secondary-font);
+}
+
+ul {
+  font-size: clamp(1.2rem, 2.8vw, 1.25rem);
+  line-height: clamp(1.5, 1.6, 1.8);
   font-family: var(--secondary-font);
 }
 
